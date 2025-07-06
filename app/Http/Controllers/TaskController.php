@@ -34,4 +34,20 @@ class TaskController extends Controller
         return redirect('/');
     }
 
+    public function update(Task $task)
+    {
+        $task->completed = true;
+        $task->save();
+
+        // Redirect back to the homepage
+        return redirect('/');
+    }
+        public function destroy(Task $task)
+        {
+            $task->delete();
+            
+            // Redirect back to the homepage    
+            return redirect('/');
+        }
+
 }

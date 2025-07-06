@@ -11,3 +11,6 @@ Route::get('/', function () {
 });
 
 Route::post('/tasks', [TaskController::class, 'store']);  
+Route::patch('/tasks/{task}/update', [TaskController::class, 'update']);  
+Route::delete('/tasks/{task}', [TaskController::class, 'destroy']);  
+

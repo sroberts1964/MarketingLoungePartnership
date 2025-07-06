@@ -18,7 +18,7 @@
                 <img src="./assets/logo.png" alt="MLP Logo">
             </div>
             <div class="flex">
-                <x-add />
+                <x-task.add />
                 <div class="ml-4 w-2/3 bg-white">
                     <div class="flex items-center border-1 h-10 border-gray-200">
                         <div class="ml-1 mr-2">
@@ -29,7 +29,7 @@
                         </div>
                     </div>
                     @foreach ($tasks as $task)
-                        <x-display :id="$loop->iteration" :task="$task->task" />        
+                        <x-task.display :id="$task->id" :task="$task->task" :completed="$task->completed" />        
                     @endforeach
                 </div>
             </div>
