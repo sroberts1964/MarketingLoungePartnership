@@ -18,14 +18,7 @@
                 <img src="./assets/logo.png" alt="MLP Logo">
             </div>
             <div class="flex">
-                <div>
-                    <div>
-                        <input type="text" name="task" placeholder="Next Task..." class="border p-2 rounded">
-                    </div>
-                    <div class="mt-4 w-100">
-                        <button type="submit" class="bg-blue-500 text-white p-2 rounded-xl w-full">Add</button>
-                    </div>
-                </div>
+                <x-add />
                 <div class="ml-4 w-2/3 bg-white">
                     <div class="flex items-center border-1 h-10 border-gray-200">
                         <div class="ml-1 mr-2">
@@ -35,19 +28,9 @@
                             Task                
                         </div>
                     </div>
-                    <div class="flex items-center h-10 ">
-                        <div class="ml-1 mr-2">
-                            1
-                        </div>
-                        <div class="ml-4 justify-between items-center w-full flex">
-                            The 1st Task
-                            <div>
-                                <button type="submit" class="bg-green-500 text-white size-7 rounded-sm">&#10003;</button>
-                                <button class="bg-red-500 text-white size-7 rounded-sm ml-2">X</button>
-                            </div>                
-                        </div>
-                    </div>
-                    {{-- <hr class="m-5"> --}}
+                    @foreach ($tasks as $task)
+                        <x-display :id="$loop->iteration" :task="$task->task" />        
+                    @endforeach
                 </div>
             </div>
         </div>

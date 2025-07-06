@@ -10,10 +10,9 @@ class Task extends Model
     /** @use HasFactory<\Database\Factories\TaskFactory> */
     use HasFactory;
 
-    public $table = 'tasks';
-
+   
     protected $fillable = [
-        'task`',
+        'task',
         'completed',
     ];
 }
